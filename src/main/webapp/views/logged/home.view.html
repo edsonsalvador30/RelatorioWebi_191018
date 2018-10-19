@@ -1,0 +1,79 @@
+<div class="component-holder ng-binding ng-scope" data-component="crn-navbar" id="crn-navbar-986427"> 
+  <nav class="navbar navbar-default"> 
+    <div class="container-fluid"> 
+      <div class="navbar-header"> 
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+        <a class="component-holder ng-binding ng-scope navbar-brand" data-component="crn-image" href="#/home"> <img src="plugins/cronapp-framework-js/img/logo.png" style="max-height:30px; margin-top:-5px" id="crn-navbar-logo"> </a> 
+      </div> 
+      <div id="navbar" class="navbar-collapse collapse"> 
+        <ul class="nav navbar-nav" style="float:none"> 
+          <li class="dropdown component-holder" data-component=""> <a href="#/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-lg fa-home"></i> <span>{{"Home.view.Home" | translate}}</span> </a> </li> 
+          <li class="dropdown component-holder" data-component="crn-menu-item" cronapp-security="visible : Administrators"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-users fa-lg"></i> <span>{{"Home.view.Admin" | translate}}</span> <span class="caret"></span> </a> 
+            <ul class="dropdown-menu"> 
+              <li><a href="#/home/admin/user" class="component-holder" data-component="crn-anchor">{{"Home.view.Users" | translate}}</a></li> 
+            </ul> </li> 
+          <li class="dropdown component-holder navbar-right" data-component="crn-menu-item"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-lg fa-gear"></i> <span>{{"ChooseTheme" | translate}}</span> <span class="caret"></span> </a> 
+            <ul class="dropdown-menu"> 
+              <li ng-repeat="theme in themes" ng-click="changeTheme(theme)"> <a href="javascript:void(0);" ng-class="{'bg-primary': myTheme==theme}">{{theme}} <i class="fa fa-lg fa-check pull-right" ng-if="myTheme==theme"></i></a></li> 
+            </ul> </li> 
+          <li class="dropdown component-holder navbar-right" data-component="crn-menu-item"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img class="user-avatar" alt="{{session.user.name}}" ng-src="{{session.user.picture || 'plugins/cronapp-framework-js/dist/img/nophoto.png'}}" style="max-height:18px;max-width:18px"> <span>{{session.user.name}}</span> <span class="caret"></span> </a> 
+            <ul class="dropdown-menu"> 
+              <li><a class="component-holder" data-toggle="modal" data-target="#modalPassword" data-component="crn-anchor">{{"Home.view.ChangePassword" | translate}}</a></li> 
+              <li ng-click="logout()"><a href="javascript:void(0);"><span>{{"Home.view.Logout" | translate}}</span></a></li> 
+            </ul> </li> 
+          <li class="dropdown component-holder" data-component="crn-menu-item"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Menu Item</span> <span class="caret"></span></a> 
+            <ul class="dropdown-menu"> 
+              <li><a href="#/home/logged/pedido" class="component-holder col-md-12" data-component="crn-anchor">Pedido</a></li> 
+              <li><a href="#/home/logged/produto" class="component-holder col-md-12" data-component="crn-anchor">Produto</a></li> 
+            <li><a href="#/home/logged/aluno" class="component-holder col-md-12" data-component="crn-anchor">Aluno</a></li><li><a href="#/home/logged/livros" class="component-holder col-md-12" data-component="crn-anchor">Livro</a></li></ul></li> 
+        </ul> 
+      </div> 
+    </div> 
+  </nav> 
+</div> 
+<div ui-view="" class="container-fluid main-view" data-container="true"> 
+  <div class="component-holder ng-binding ng-scope col-md-12" data-component="crn-button"> 
+    <datasource data-component="crn-datasource" class="component-holder" name="Produto" entity="app.Produto" keys="id" rows-per-page="100" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;nomeProduto&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;valor&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;qtd&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;fabricacao&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;disponivel&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pedido&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pedido_descricao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}]" parameters="" dependent-lazy-post="" lazy="" checkrequired=""></datasource>
+    <div class="component-holder ng-binding ng-scope col-md-12" data-component="crn-cron-grid" id="crn-cron-grid-903741">
+      <cron-grid options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;Produto&quot;,&quot;entity&quot;:&quot;app.Produto&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;app.Produto&quot;,&quot;customId&quot;:&quot;Produto&quot;,&quot;name&quot;:&quot;Produto&quot;,&quot;customQueryName&quot;:&quot;app.Produto&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;app.entity.Produto&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;nomeProduto&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;valor&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;qtd&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;fabricacao&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;disponivel&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pedido&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pedido_descricao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}],&quot;type&quot;:&quot;entity&quot;},&quot;keys&quot;:&quot;id&quot;,&quot;rowsPerPage&quot;:&quot;100&quot;,&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;nomeProduto&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;valor&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;qtd&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;fabricacao&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;disponivel&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pedido&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;pedido_descricao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}],&quot;parameters&quot;:&quot;&quot;,&quot;dependentLazyPost&quot;:&quot;&quot;,&quot;lazy&quot;:&quot;&quot;,&quot;checkrequired&quot;:&quot;&quot;,&quot;onBeforeCreate&quot;:&quot;&quot;,&quot;onAfterCreate&quot;:&quot;&quot;,&quot;onBeforeUpdate&quot;:&quot;&quot;,&quot;onAfterUpdate&quot;:&quot;&quot;,&quot;onBeforeDelete&quot;:&quot;&quot;,&quot;onAfterDelete&quot;:&quot;&quot;,&quot;onAfterFill&quot;:&quot;&quot;,&quot;dataComponent&quot;:&quot;crn-datasource&quot;,&quot;id&quot;:&quot;&quot;,&quot;oldName&quot;:&quot;&quot;},&quot;allowPaging&quot;:true,&quot;allowSorting&quot;:true,&quot;allowGrouping&quot;:true,&quot;allowSelectionTotalPageToShow&quot;:true,&quot;allowRefreshGrid&quot;:true,&quot;allowSelectionRow&quot;:true,&quot;editable&quot;:&quot;popup&quot;,&quot;pathView&quot;:&quot;src/main/webapp/views/logged/home.view.html&quot;,&quot;columns&quot;:[{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;nomeProduto&quot;,&quot;headerText&quot;:&quot;NomeProduto&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;valor&quot;,&quot;headerText&quot;:&quot;Valor&quot;,&quot;type&quot;:&quot;number&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;qtd&quot;,&quot;headerText&quot;:&quot;Qtd&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;disponivel&quot;,&quot;headerText&quot;:&quot;Disponivel&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;fabricacao&quot;,&quot;headerText&quot;:&quot;Fabricacao&quot;,&quot;type&quot;:&quot;date&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Command&quot;,&quot;sortable&quot;:false,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;visibleCrud&quot;:false,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;command&quot;:&quot;edit|destroy&quot;,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;}],&quot;toolBarButtons&quot;:[{&quot;type&quot;:&quot;Native&quot;,&quot;title&quot;:&quot;create&quot;}],&quot;details&quot;:[]}" ng-model="vars.grid3546" class=""></cron-grid>
+    </div>
+    <datasource data-component="crn-datasource" class="component-holder" name="ProdutosSemRepeticao" entity="app.query922612" keys="nomeProduto" rows-per-page="100" schema="[{&quot;name&quot;:&quot;nomeProduto&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:true}]" parameters="" dependent-lazy-post=""></datasource>
+    <div class="component-holder ng-binding ng-scope col-md-12" data-component="crn-enterprise-dynamic-combobox" id="crn-enterprise-dynamic-combobox-929727">
+      <div class="form-group">
+        <label for="combobox8844">Label</label>
+        <cron-dynamic-select options="{&quot;headerTemplate&quot;:&quot;&quot;,&quot;template&quot;:&quot;&quot;,&quot;footerTemplate&quot;:&quot;&quot;,&quot;placeholder&quot;:&quot;Lista de Produtos&quot;,&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;ProdutosSemRepeticao&quot;,&quot;oldName&quot;:&quot;&quot;,&quot;entity&quot;:&quot;app.query922612&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;app.query922612&quot;,&quot;customId&quot;:&quot;query922612&quot;,&quot;name&quot;:&quot;ProdutosSemRepeticao&quot;,&quot;customQueryName&quot;:&quot;Produtos Sem repeticao&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;app.entity.Produto&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;nomeProduto&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:true}],&quot;type&quot;:&quot;customQuery&quot;},&quot;keys&quot;:&quot;nomeProduto&quot;,&quot;schema&quot;:[{&quot;name&quot;:&quot;nomeProduto&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:true}],&quot;parameters&quot;:&quot;&quot;,&quot;dependentLazyPost&quot;:&quot;&quot;,&quot;id&quot;:&quot;3ca&quot;},&quot;filter&quot;:&quot;startswith&quot;,&quot;dataTextField&quot;:&quot;nomeProduto&quot;,&quot;dataValueField&quot;:&quot;nomeProduto&quot;,&quot;dynamic&quot;:true,&quot;valuePrimitive&quot;:true,&quot;valueTemplate&quot;:&quot;&quot;,&quot;dropDownList&quot;:true,&quot;staticDataSource&quot;:[],&quot;initValue&quot;:&quot;&quot;}" cron-init="" ng-required="false" id="combobox8844" ng-model="vars.model8844" class="crn-select form-control" style=""></cron-dynamic-select>
+      </div>
+    </div>
+  </div> 
+</div> 
+<div class="modal fade" id="modalPassword"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title">{{"Home.view.ChangePassword" | translate}}</h4> 
+      </div> 
+      <div class="modal-body"> 
+        <form class="form-validation" autocomplete="off" name="form" role="form"> 
+          <div class="text-danger wrapper text-center" ng-show="authError"> 
+          </div> 
+          <div class="list-group list-group-sm"> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="oldPassword" placeholder="{{'Home.view.Old Password' | translate}}" ng-required="true"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="newPassword" placeholder="{{'Home.view.New Password' | translate}}" ng-required="true"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control no-border" id="newPasswordConfirmation" placeholder="{{'Home.view.Confirmation' | translate}}" ng-required="true"> 
+            </div> 
+          </div> 
+        </form> 
+      </div> 
+      <div class="modal-footer"> 
+        <button class="btn btn-primary" type="submit" ng-click="changePassword()" ng-disabled="form.$invalid || vm.dataLoading">{{"Home.view.ChangePassword" | translate}}</button> 
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{'Home.view.Close' | translate}}</button> 
+      </div> 
+    </div> 
+  </div> 
+</div>

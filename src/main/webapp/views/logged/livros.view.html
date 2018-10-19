@@ -1,0 +1,205 @@
+<h3>Livros</h3>
+
+<!-- div row para pesquisa -->
+<!--<div class="row">-->
+
+<datasource data-component="crn-datasource" filter="" name="Livros" entity="app.Livros" keys="id" rows-per-page="100" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;titulo&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;autor&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;livros_0&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;livros_0_titulo&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}]"></datasource>
+
+    <div ng-hide="Livros.inserting || Livros.editing" data-component="crn-datasource-filter" id="crn-datasource-filter-general20935" class="">
+        <div class="form-group">
+            <label for="textinput-filter" class="">{{"template.crud.search" | translate}}</label>
+            <input type="text" ng-model="vars.search" cronapp-filter="titulo;" cronapp-filter-operator="" cronapp-filter-caseinsensitive="false" cronapp-filter-autopost="true" crn-datasource="Livros" class="form-control" value="" placeholder="{{'template.crud.search' | translate}}">
+        </div>
+    </div>
+
+<div data-component="crn-button" id="crn-button-20935" class="">
+    <button class="btn btn-primary" type="submit" onclick="" data-component="crn-button" id="btn-crud-new20935" ng-click="Livros.startInserting()" ng-hide="Livros.inserting || Livros.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button>
+</div>
+<!-- fim div row para pesquisa -->
+<!--</div>-->
+
+<div class="component-holder" data-component="crn-grid" id="crn-grid-Livros-20935">
+    <div crn-datasource="Livros" class="" ng-hide="Livros.editing || Livros.inserting">
+        <table class="table  table-bordered table-hover table-striped">
+            <thead>
+            <tr class="table-header">
+                <th class="">
+                    <div class="">Titulo</div>
+                </th>
+                <th class="">
+                    <div class="">Autor</div>
+                </th>
+                <th class="">
+                    <div class="">{{"template.crud.actions" | translate}}</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-content" ng-repeat="rowData in datasource.data">
+                <td class="">
+                    <div class="">
+							{{rowData.titulo  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+							{{rowData.autor  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                        <button class="btn btn-default btn-sm" data-component="crn-button" type="submit" id="btn_crud_edit20935" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i><span></span></button>
+                        <button class="btn btn-default btn-sm" data-component="crn-button" type="submit" id="btn_remove_edit20935" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i><span></span></button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="table-footer-controls">
+            <button class="btn btn-default btn-block btn-clicked" data-component="crn-button" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button>
+        </div>
+    </div>
+</div>
+<div data-component="crn-form" id="crn-form-form-Livros-20935">
+    <div class="form" ng-show="Livros.editing || Livros.inserting">
+        <form crn-datasource="Livros" class="">
+            <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting">
+                <button class="btn btn-primary" data-component="crn-button" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button>
+                <button class="btn btn-success" data-component="crn-button" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button>
+                <button class="btn btn-primary" data-component="crn-button" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                <button class="btn btn-primary" data-component="crn-button" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                <button class="btn btn-primary" data-component="crn-button" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button>
+            </div>
+            <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
+                <button class="btn btn-success" id="btn_crud_post20935" data-component="crn-button" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i><span></span></button>
+                <button class="btn btn-danger" id="btn_crud_cancel20935" data-component="crn-button" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i><span></span></button>
+            </div>
+            <br/>
+            <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting">
+				
+
+                <div data-component="crn-textinput" id="crn-textinput-titulo-20935" class="">
+                    <div class="form-group">
+                        <label for="textinput-titulo" class="">Titulo</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                <input
+                                            type="text"
+                                            ng-model="Livros.active.titulo"
+                                            class="form-control"
+                                            id="textinput-titulo"
+                                            placeholder="Titulo"
+                                            mask=""
+                                            mask-placeholder=""
+                                            ng-required="false">
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+				
+
+                <div data-component="crn-textinput" id="crn-textinput-autor-20935" class="">
+                    <div class="form-group">
+                        <label for="textinput-autor" class="">Autor</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                <input
+                                            type="text"
+                                            ng-model="Livros.active.autor"
+                                            class="form-control"
+                                            id="textinput-autor"
+                                            placeholder="Autor"
+                                            mask=""
+                                            mask-placeholder=""
+                                            ng-required="false">
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+                <!-- NtoN  -->
+                <!-- NtoN  end-->
+            </fieldset>
+        </form>
+        <form>
+            <fieldset>
+                <!-- OneToN -->
+                <!--query filter 1toN -->
+                
+				<!-- query filter 1toN end-->
+				<datasource 
+					data-component="crn-datasource" 
+					filter="" 
+					name="LivrosGrid" 
+					entity="app.Livros" 
+					keys="id" 
+					dependent-lazy-post="Livros" 
+					rows-per-page="100" 
+					parameters="livros_0={{Livros.active.id|raw}}"
+					schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;titulo&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;autor&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;livros_0&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;livros_0_titulo&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}]">
+				</datasource>
+				<!-- teste -->
+				<h3 class="lead component-holder" data-component="crn-subtitle">Livros </h3>				
+				<div class="component-holder ng-binding ng-scope" data-component="crn-cron-grid" id="crn-grid-LivrosGrid-20935">
+					<cron-grid options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;LivrosGrid&quot;,&quot;entity&quot;:&quot;app.Livros&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;app.Livros&quot;,&quot;customId&quot;:&quot;Livros&quot;,&quot;name&quot;:&quot;LivrosGrid&quot;,&quot;customQueryName&quot;:&quot;app.Livros&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;app.entity.Livros&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;titulo&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;autor&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;livros_0&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;livros_0_titulo&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}],&quot;type&quot;:&quot;entity&quot;},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;titulo&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;autor&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;livros_0&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;livros_0_titulo&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}],&quot;id&quot;:&quot;app.Livros&quot;},&quot;allowPaging&quot;:true,&quot;allowSorting&quot;:true,&quot;allowGrouping&quot;:true,&quot;allowSelectionTotalPageToShow&quot;:true,&quot;allowRefreshGrid&quot;:true,&quot;allowSelectionRow&quot;:true,&quot;editable&quot;:&quot;popupCustom&quot;,&quot;popupInsert&quot;:&quot;modalLivrosGrid&quot;,&quot;popupEdit&quot;:&quot;modalLivrosGrid&quot;,&quot;columns&quot;:[{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;titulo&quot;,&quot;headerText&quot;:&quot;Titulo&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;autor&quot;,&quot;headerText&quot;:&quot;Autor&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;},{&quot;dataType&quot;:&quot;Command&quot;,&quot;sortable&quot;:false,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;command&quot;:&quot;edit|destroy&quot;,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;}],&quot;toolBarButtons&quot;:[{&quot;type&quot;:&quot;Native&quot;,&quot;title&quot;:&quot;create&quot;}],&quot;details&quot;:[]}" ng-model="LivrosGrid.data" class="" style=""></cron-grid>
+				</div> 
+                <!-- OneToOne  end -->
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalLivrosGrid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Livros</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-sm row">
+<!-- else of !model.hasCronappFramework() -->
+                             <!-- end if !model.hasCronappFramework() -->
+
+<!-- else of !model.hasCronappFramework() -->
+
+									
+                                    <div data-component="crn-textinput"  id="crn-modal-textinput-Titulo-20935" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-modal-Titulo">Titulo</label>
+                                                <input type="text"
+                                                       ng-model="LivrosGrid.active.titulo" class="form-control"
+                                                       id="textinput-modal-Titulo"
+                                                       placeholder="Titulo"
+                                                       mask=""
+                                                       mask-placeholder=""
+                                                    ng-required="false">
+                                        </div>
+                                    </div>
+                             <!-- end if !model.hasCronappFramework() -->
+
+<!-- else of !model.hasCronappFramework() -->
+
+									
+                                    <div data-component="crn-textinput"  id="crn-modal-textinput-Autor-20935" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-modal-Autor">Autor</label>
+                                                <input type="text"
+                                                       ng-model="LivrosGrid.active.autor" class="form-control"
+                                                       id="textinput-modal-Autor"
+                                                       placeholder="Autor"
+                                                       mask=""
+                                                       mask-placeholder=""
+                                                    ng-required="false">
+                                        </div>
+                                    </div>
+                             <!-- end if !model.hasCronappFramework() -->
+
+<!-- else of !model.hasCronappFramework() -->
+                             <!-- end if !model.hasCronappFramework() -->
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
