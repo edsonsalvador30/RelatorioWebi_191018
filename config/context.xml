@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><Context>
-    <Resource accessToUnderlyingConnectionAllowed="true" driverClassName="org.h2.Driver" logAbandoned="true" name="jdbc/main" password="root" profile="DEV" removeAbandoned="false" removeAbandonedTimeout="60" type="javax.sql.DataSource" url="jdbc:h2:file:~/2bc734a4abed4adba516af733b5c0774;DATABASE_TO_UPPER=false;ALIAS_COLUMN_NAME=true;AUTO_SERVER=TRUE" username="root"/>
+    <Resource accessToUnderlyingConnectionAllowed="true" driverClassName="com.mysql.jdbc.Driver" logAbandoned="true" name="jdbc/main" password="rn73s0r9p230r2rs" profile="DEV" removeAbandoned="" removeAbandonedTimeout="60" schema="" type="javax.sql.DataSource" url="jdbc:mysql://rds-oncronos-shared.cx8gelec2ybx.us-east-1.rds.amazonaws.com:3306/92bae3cb-368e-4d2e-a73f-0e9c230e2ef3?createDatabaseIfNotExist=true" username="92onr3po368r4q2r"/>
     <Resource accessToUnderlyingConnectionAllowed="false" driverClassName="com.mysql.jdbc.Driver" logAbandoned="true" name="jdbc/Web1610181" password="on097p8327s479rn" profile="DEV" removeAbandoned="false" removeAbandonedTimeout="60" schema="" type="javax.sql.DataSource" url="jdbc:mysql://rds-oncronos-shared.cx8gelec2ybx.us-east-1.rds.amazonaws.com:3306/68e39f2f-2f00-4f2b-a097-c8327f479ea7?createDatabaseIfNotExist=true" username="68r39s2s2s004s2o"/>
     <Profile value="DEV"/>
 </Context>
